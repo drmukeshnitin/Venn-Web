@@ -54,21 +54,10 @@ def generate():
 
         i += 1
 
-    if len(sets) < 2 or len(sets) > 3:
-        return render_template("index.html", message="Please provide 2 or 3 valid data entries.")
+    if len(sets) < 2:
+        return render_template("index.html", message="Please provide at least 2 valid data entries.")
 
-    # Generate Venn Diagram
-    plt.figure(figsize=(6,6))
-    if len(sets) == 2:
-        venn2(subsets=sets, set_labels=labels)
-    else:
-        venn3(subsets=sets, set_labels=labels)
-
-    venn_path = os.path.join(RESULT_FOLDER, "venn_diagram.png")
-    plt.savefig(venn_path)
-    plt.close()
-
-    # Generate Excel Report in Order Style 2
+    # Excel Report - Universal
     all_values = sorted(set.union(*sets))
     value_to_labels = []
 
@@ -80,10 +69,27 @@ def generate():
     table_path = os.path.join(RESULT_FOLDER, "unique_and_common_values_analysis_report.xlsx")
     df.to_excel(table_path, index=False)
 
+    venn_path = None
+    if len(sets) <= 3:
+        # Generate Venn Diagram
+        plt.figure(figsize=(6,6))
+        if len(sets) == 2:
+            venn2(subsets=sets, set_labels=labels)
+        elif len(sets) == 3:
+            venn3(subsets=sets, set_labels=labels)
+
+        venn_path = os.path.join(RESULT_FOLDER, "venn_diagram.png")
+        plt.savefig(venn_path)
+        plt.close()
+
+    elif len(sets) > 3:
+        venn_path = None  # skip Venn if more than 3 levels
+
     return render_template(
         "index.html",
-        venn_path="/download/venn_diagram.png",
-        download=True
+        venn_path="/download/venn_diagram.png" if venn_path else None,
+        download=True,
+        message="Venn diagram not generated for more than 3 datasets." if len(sets) > 3 else ""
     )
 
 @app.route("/download/<path:filename>")
