@@ -68,13 +68,15 @@ def generate():
     plt.savefig(venn_path)
     plt.close()
 
-    # Generate Excel Report
+    # Generate Excel Report in Order Style 2
     all_values = sorted(set.union(*sets))
-    report = {"Values": all_values}
-    for lbl, s in zip(labels, sets):
-        report[lbl] = [val in s for val in all_values]
-    df = pd.DataFrame(report)
+    value_to_labels = []
 
+    for val in all_values:
+        present_labels = [label for label, s in zip(labels, sets) if val in s]
+        value_to_labels.append((val, ", ".join(present_labels)))
+
+    df = pd.DataFrame(value_to_labels, columns=["Values", "Labels"])
     table_path = os.path.join(RESULT_FOLDER, "unique_and_common_values_analysis_report.xlsx")
     df.to_excel(table_path, index=False)
 
@@ -90,4 +92,3 @@ def download(filename):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
