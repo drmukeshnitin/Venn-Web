@@ -30,3 +30,17 @@ pip install -r requirements.txt
 
 # VennWeb
 # Venn-Web
+
+
+
+Venn-Master-Venn Diagram Tool License
+
+This project is licensed under the MIT License.
+
+Venn-Master-Venn Diagram Tool Contact
+
+For any issues or suggestions, please reach out to:
+
+    Author: Dr Mukesh nitin
+    Email: drrmukeshnitin@gmail.com
+    GitHub: https://github.com/drmukeshnitin/vennmaster
