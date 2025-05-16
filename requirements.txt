@@ -1,0 +1,6 @@
+Flask
+pandas
+matplotlib
+matplotlib-venn
+venn
+
