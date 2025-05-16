@@ -3,4 +3,5 @@ pandas
 matplotlib
 matplotlib-venn
 venn
+gunicorn
 
