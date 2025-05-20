@@ -18,7 +18,6 @@ For advance version you can request the author.
 
 
 
-![Screenshot from 2025-05-16 14-52-17](https://github.com/user-attachments/assets/e42e3e22-f089-4789-8fac-1502baadfca7)
 
 Data can be filled in each query box and label them for example
 
@@ -26,6 +25,13 @@ Data can be filled in each query box and label them for example
 
 and so on..
 you can upload excel also as given format sample wise.
+
+
+
+
+![Screenshot from 2025-05-16 14-52-17](https://github.com/user-attachments/assets/e42e3e22-f089-4789-8fac-1502baadfca7)
+
+
 
 
 ## 🔧 Features
