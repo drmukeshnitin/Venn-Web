@@ -3,6 +3,8 @@
 A web-based Venn diagram generator that allows up to 4 data sets to be uploaded via files or text, generates Venn diagrams, and provides Excel reports of unique and common values.
 
 DIRECT WEB USE- https://venn-web.onrender.com/ 
+
+
 NOTE- The Render server may take time (10-15 seconds) to inıtiate software due to query load- So be patient and enjoy analysis
 
 
@@ -20,26 +22,10 @@ For advance version you can request the author.
 
 Data can be filled in each query box and label them for example
 
-Labe1
-1
-2
-3
-
-Label2 
-2
-3
-4
-5
-
-Label3
-3
-4
-1
-2
-
+![Screenshot from 2025-05-20 09-29-26](https://github.com/user-attachments/assets/909c4594-36a9-4d27-b417-4fdfc1ee0d5b)
 
 and so on..
-you can upload excel also as gıven format sample wise.
+you can upload excel also as given format sample wise.
 
 
 ## 🔧 Features
